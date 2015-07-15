@@ -1,9 +1,13 @@
 package com.sidelance.weather.weather360;
 
 /**
- * Created by xsc2144 on 7/15/2015.
+ * Global declarations found here.
  */
-public class AppConstants {
+public class AppConstants extends Object{
 
-    private static final String APP_SCRT = "67510f5340276195";
+    public static final String APP_SCRT = "67510f5340276195";
+
+    public static final String STORE_NAME = "com.sidelance.weather.weather360";
+
+    public static final String GENERATED_DEVICEID_KEY = "com.sidelance.weather.weather360";
 }
