@@ -2,7 +2,6 @@ package com.sidelance.weather.weather360.Commons.tools;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -28,7 +27,15 @@ public class Tools {
      */
     private static final String DEVICE_ID_ADDITIONAL_TEXT = "AKFD45245hHFSALFSGVVZ9128347321X";
 
-
+    /**
+     * Method to Save ciphered Value
+     *
+     * @param context the context used
+     * @param preferences the preference
+     * @param key key
+     * @param value value
+     * @return result flag
+     */
     public static boolean saveCipheredValue(Context context, SharedPreferences preferences, String key, String value){
 
         boolean result = false;
@@ -48,6 +55,15 @@ public class Tools {
 
         return result;
     }
+
+    /**
+     * Method to load ciphered value
+     *
+     */
+    public static boolean loadCipheredValue(Context context, SharedPreferences preferences, String key, String value){
+        
+    }
+
 
     /**
      * Gets the a digest from data
@@ -243,6 +259,26 @@ public class Tools {
                 }
             } catch (Throwable t) {
                Log.e(TAG, "" + t);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Method to make sure only numbers are entered
+     * @param string
+     * @param characterSet
+     * @param maxCharacters
+     * @return result
+     */
+    public static boolean isValidString(String string, String characterSet, int maxCharacters){
+
+        boolean result = false;
+        if (string != null){
+            if (string.length() <= maxCharacters){
+                if (string.matches("[0-9]+")){
+                    result = true;
+                }
             }
         }
         return result;
