@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources">
+
+    <!-- Weather360 Primary colors -->
+    <color name="bm1">#FF003F8C</color>
+    <color name="bm2">#FF004B8C</color>
+    <color name="bm3">#FF00559D</color>
+    <color name="bm4">#FF0069B1</color>
+    <color name="bm5">#FF0079C1</color>
+    <color name="b1">#FF006EC1</color>
+    <color name="bm6">#FFB6CEEA</color>
+    <color name="bm6_50">#88B6CEEA</color>
+    <color name="bm7">#FFD5E2EE</color>
+    <color name="bm8">#FFEAF1F7</color>
+    <color name="bm9">#FFD2E5EB</color>
+    <color name="bm10">#FFE2FAFE</color>
+    <color name="bm11">#FFDDE3EA</color>
+    <color name="bm12">#FFF3F5F7</color>
+
+    <!-- Weather360 Secondary colors -->
+    <color name="rm1">#FF81003D</color>
+    <color name="rm2">#FF9D004A</color>
+    <color name="rm3">#FFB7085B</color>
+    <color name="rm4">#FFCC0966</color>
+    <color name="rm5">#FFF4CCDF</color>
+    <color name="rm6">#FFF7E9E9</color>
+
+    <color name="gm1">#FF347201</color>
+    <color name="gm2">#FF428B12</color>
+    <color name="gm3">#FF499900</color>
+    <color name="gm4">#FF44A718</color>
+    <color name="gm5">#FF59C000</color>
+
+    <color name="ym0">#FFFDBD2C</color>
+    <color name="ym1">#FFF2D7BB</color>
+    <color name="ym2">#FFFAEBB9</color>
+    <color name="ym3">#FFFBF1D0</color>
+    <color name="ym4">#FFFFFAEB</color>
+
+    <!-- Weather360 Black & grey colors -->
+    <color name="km1">#FF333333</color>
+    <color name="km2">#FF434A58</color>
+    <color name="km3">#FF717780</color>
+    <color name="km4">#FF797F85</color>
+    <color name="km5">#FFDBDCDF</color>
+    <color name="km6">#FFE5E5E5</color>
+    <color name="km7">#FFF0F2EF</color>
+    <color name="km8">#FFF4F7F5</color>
+    <color name="kmw">#FFFFFFFF</color>
+
+    <!-- Other colors -->
+    <color name="item_aggregate_bg">#E4EFF7</color>
+    <color name="transparent">#0000</color>
+
+</resources>

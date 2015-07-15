@@ -1,5 +1,71 @@
 <resources>
+
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Sliding sliding_menu related -->
+    <dimen name="slidingmenu_offset">@dimen/actionbar_items_min_size</dimen>
+    <dimen name="slidingmenu_icon_padding">18dp</dimen>
+
+    <!-- Actionbar related -->
+    <dimen name="actionbar_items_min_size">48dp</dimen>
+    <dimen name="actionbar_title_size">18dp</dimen>
+    <dimen name="actionbar_subtitle_size">14dp</dimen>
+    <dimen name="actionbar_dropshadow_size">2dp</dimen>
+    <dimen name="actionbar_min_height">48dp</dimen>
+
+    <!-- AppMsg related -->
+    <dimen name="alert_top_margin_size">8dp</dimen>
+    <dimen name="alert_error_size">60dp</dimen>
+    <dimen name="alert_warning_size">60dp</dimen>
+    <dimen name="alert_info_size">60dp</dimen>
+    <dimen name="alert_success_size">60dp</dimen>
+
+    <!-- Quiero view -->
+    <dimen name="collapsed_view">43dp</dimen>
+    <dimen name="margin_contextual_options">10dp</dimen>
+
+    <!-- CollapsibleComponent related -->
+    <dimen name="collapsable_title_size">14dp</dimen>
+    <dimen name="collapsable_summary_size">14dp</dimen>
+
+    <!-- TextView fading -->
+    <dimen name="fading_margin">12dp</dimen>
+
+    <!-- General -->
+    <dimen name="half_general_padding">6dp</dimen> <!-- 0.5x general_padding -->
+    <dimen name="general_padding">12dp</dimen>
+    <dimen name="double_general_padding">24dp</dimen> <!-- 2x general_padding -->
+    <dimen name="spinner_right_padding">47dp</dimen>
+    <dimen name="form_top_margin">10dp</dimen>
+    <dimen name="form_top_spinner_margin">5dp</dimen>
+    <dimen name="form_bottom_spinner_margin">5dp</dimen>
+    <dimen name="margin_between_texts">8dp</dimen>
+
+    <!-- Global Position -->
+    <dimen name="subhome_header_listview_height">32dp</dimen>
+    <dimen name="header_gp_listview_height">44dp</dimen>
+    <dimen name="bankaccount_gp_listview_height">60dp</dimen>
+    <dimen name="bankaccounts_agregate_listview_height">72dp</dimen>
+    <dimen name="transaction_listview_height">60dp</dimen>
+
+    <!-- Headers and Items -->
+    <dimen name="account_gruop_listview_height">72dp</dimen>
+
+    <!-- progressing indicator edge -->
+    <dimen name="progress_indicator_edge">22dp</dimen>
+
+    <!-- Maps -->
+    <dimen name="map_button_size">54dp</dimen>
+    <dimen name="poi_listview_height">60dp</dimen>
+    <dimen name="poi_listview_icon_height">40dp</dimen>
+
+    <!-- Buttons dimensions -->
+    <dimen name="button_height">40dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="custom_dialog_text_size">14sp</dimen>
+
+
 </resources>

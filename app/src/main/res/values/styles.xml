@@ -5,4 +5,24 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="BuzzDialogPositiveButton">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/kmw</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginLeft">6sp</item>
+        <item name="android:layout_marginRight">6sp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:minWidth">144sp</item>
+    </style>
+
+    <!-- Text Style -->
+
+    <style name="FadingSingleLine">
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:requiresFadingEdge">horizontal</item>
+        <item name="android:textColor">@color/bm1</item>
+        <item name="android:fadingEdgeLength">@dimen/fading_margin</item>
+    </style>
+
 </resources>
