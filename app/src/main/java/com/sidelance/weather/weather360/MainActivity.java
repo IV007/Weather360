@@ -1,18 +1,68 @@
 package com.sidelance.weather.weather360;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.sidelance.weather.weather360.Commons.CustomDialog;
+
+import java.util.Timer;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 public class MainActivity extends ActionBarActivity {
 
+
+    /**
+     * Reference to Views
+     * */
+    @InjectView(R.id.cameraButton) protected Button cameraButton;
+    @InjectView(R.id.cameraImageView) protected ImageView cameraImage;
+    @InjectView(R.id.dialogImage) protected ImageView dialogIcon;
+
+
+
+    private CustomDialog rotation;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        ButterKnife.inject(this);
+
     }
+
+
+
+    @OnClick(value = R.id.cameraButton) protected void onStartButtonClicked(){
+
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent trigger = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(trigger, 100);
+
+            }
+        });
+    }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -35,4 +85,22 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (data != null) {
+
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+
+            cameraButton.setVisibility(View.GONE);
+
+            cameraImage.setVisibility(View.VISIBLE);
+
+            cameraImage.setImageBitmap(bitmap);
+        }
+    }
+
+
 }
