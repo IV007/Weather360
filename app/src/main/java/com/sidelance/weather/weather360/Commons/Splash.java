@@ -1,23 +1,18 @@
 package com.sidelance.weather.weather360.Commons;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sidelance.weather.weather360.MainActivity;
+import com.sidelance.weather.weather360.CameraActivity;
 import com.sidelance.weather.weather360.R;
-
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 import butterknife.InjectView;
 
@@ -66,7 +61,7 @@ public class Splash extends ActionBarActivity {
     public void startUpFinish(){
 
         dialogIcon.setAnimation(null);
-        Intent intent = new Intent(Splash.this, MainActivity.class);
+        Intent intent = new Intent(Splash.this, CameraActivity.class);
         startActivity(intent);
     }
 
