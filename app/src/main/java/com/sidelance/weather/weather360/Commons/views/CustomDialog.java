@@ -1,9 +1,5 @@
-package com.sidelance.weather.weather360.Commons;
+package com.sidelance.weather.weather360.commons.views;
 
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 

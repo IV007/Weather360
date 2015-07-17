@@ -1,4 +1,4 @@
-package com.sidelance.weather.weather360.Commons.tools;
+package com.sidelance.weather.weather360.commons.tools;
 
 import android.content.Context;
 import android.util.Log;
@@ -37,14 +37,14 @@ public class Crypto {
         byte[] key = null;
 
         try{
-            String deviceId = Tools.getDeviceId(context);
+            String deviceId = Screw.getDeviceId(context);
             byte[] scrt = AppConstants.APP_SCRT.getBytes();
             if ((deviceId != null) && (scrt != null)) {
                 byte[] deviceIdBytes = deviceId.getBytes();
                 byte[] toBeHashed = new byte[deviceIdBytes.length + scrt.length];
                 System.arraycopy(deviceIdBytes, 0, toBeHashed, 0, deviceIdBytes.length);
                 System.arraycopy(scrt, 0, toBeHashed, deviceIdBytes.length, scrt.length);
-                byte[] digest = Tools.getDigest(toBeHashed);
+                byte[] digest = Screw.getDigest(toBeHashed);
                 if (digest != null) {
                     key = new byte[16];
                     System.arraycopy(digest, 0, key, 0, 16);
@@ -74,8 +74,7 @@ public class Crypto {
     }
 
     /**
-     * Encrypt any text
-     *
+     * Decrypt any text
      * @param context The context to obtain the device ID (from IMEI)
      * @param encryptedText the encrypted input text
      * @return the encrypted text
@@ -214,8 +213,7 @@ public class Crypto {
         IvParameterSpec ivSpec = new IvParameterSpec(initVector);
         Cipher cipher = Cipher.getInstance("DESede/CBC/NoPadding");
         cipher.init(Cipher.DECRYPT_MODE, skeySpec, ivSpec);
-        byte[] decrypted = cipher.doFinal(cipherText, 0, dataLength);
-        return decrypted;
+        return cipher.doFinal(cipherText, 0, dataLength);
     }
 
 }

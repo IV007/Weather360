@@ -1,4 +1,4 @@
-package com.sidelance.weather.weather360.Commons.tools;
+package com.sidelance.weather.weather360.commons.tools;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,9 +14,9 @@ import java.util.UUID;
 /**
  *Utility Methods
  */
-public class Tools {
+public class Screw {
 
-    private static final String TAG = "Tools";
+    private static final String TAG = "Screw";
 
     private static String generatedDeviceId = null;
 
@@ -44,7 +44,7 @@ public class Tools {
 
             String savedValue = (value != null) ? value : "";
             byte[] cipheredValue = Crypto.encryptValue(context, savedValue);
-            String cipheredValueAsText = Tools.toHexString(cipheredValue);
+            String cipheredValueAsText = Screw.toHexString(cipheredValue);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString(key, cipheredValueAsText);
             result = editor.commit();
@@ -61,7 +61,9 @@ public class Tools {
      *
      */
     public static boolean loadCipheredValue(Context context, SharedPreferences preferences, String key, String value){
-        
+        boolean result = false;
+
+        return result;
     }
 
 

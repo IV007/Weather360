@@ -10,11 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.sidelance.weather.weather360.Commons.CustomDialog;
-
-import java.util.Timer;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -29,11 +24,6 @@ public class MainActivity extends ActionBarActivity {
      * */
     @InjectView(R.id.cameraButton) protected Button cameraButton;
     @InjectView(R.id.cameraImageView) protected ImageView cameraImage;
-    @InjectView(R.id.dialogImage) protected ImageView dialogIcon;
-
-
-
-    private CustomDialog rotation;
 
 
     @Override

@@ -1,12 +1,10 @@
-package com.sidelance.weather.weather360.Commons;
+package com.sidelance.weather.weather360.commons.views;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
@@ -15,9 +13,6 @@ import android.widget.TextView;
 
 import com.sidelance.weather.weather360.MainActivity;
 import com.sidelance.weather.weather360.R;
-
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 import butterknife.InjectView;
 

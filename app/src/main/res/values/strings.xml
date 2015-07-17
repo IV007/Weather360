@@ -7,5 +7,18 @@
     <string name="loading">Loading…</string>
     <string name="title_activity_splash">Splash</string>
 
+    <!-- Manifest Strings -->
+
+    <!-- Permissions -->
+    <string name="permlab_sendSms">Send SMS permission</string>
+    <string name="permdesc_sendSms">This App can send sms messages</string>
+    <string name="permlab_receiveSms">Receive SMS permission</string>
+    <string name="permdesc_receiveSms">This App can receive sms messages</string>
+    <string name="permlab_readSms">Read SMS permission</string>
+    <string name="permdesc_readSms">This app can read sms messages</string>
+    <string name="permlab_writeSms">Write SMS permission</string>
+    <string name="permdesc_writeSms">This app can write sms messages</string>
+    <string name="permlab_receiveBootCompleted">Boot Complete</string>
+    <string name="permdesc_receiveBootCompleted">Phone Boot/Re-boot complete</string>
 
 </resources>

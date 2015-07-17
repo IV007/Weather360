@@ -1,4 +1,4 @@
-package com.sidelance.weather.weather360.locationsensors;
+package com.sidelance.weather.weather360.sensors.locationsensors;
 
 import android.app.Activity;
 import android.location.Location;

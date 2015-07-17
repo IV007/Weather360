@@ -2,13 +2,52 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sidelance.weather.weather360" >
 
-    <uses-permission android:name="ANDROID.PERMISSION.INTERNET"/>
+    <permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"
+        android:permissionGroup="android.permission-group.APP_INFO"
+        android:protectionLevel="normal"
+        android:label="@string/permlab_receiveBootCompleted"
+        android:description="@string/permdesc_receiveBootCompleted"/>
+
+    <!-- SMS Permissions -->
+    <permission android:name="android.permission.SEND_SMS"
+        android:permissionGroup="android.permission-group.MESSAGES"
+        android:protectionLevel="dangerous"
+        android:permissionFlags="costsMoney"
+        android:label="@string/permlab_sendSms"
+        android:description="@string/permdesc_sendSms"
+        />
+    
+    <permission android:name="android.permission.RECEIVE_SMS"
+        android:permissionGroup="android.permision-group.MESSAGES"
+        android:protectionLevel="dangerous"
+        android:label="@string/permlab_receiveSms"
+        android:description="@string/permdesc_receiveSms"/>
+
+    <permission android:name="android.permission.READ_SMS"
+        android:permissionGroup="android.permission-group.MESSAGES"
+        android:protectionLevel="dangerous"
+        android:label="@string/permlab_readSms"
+        android:description="@string/permdesc_readSms"/>
+
+    <permission android:name="android.permission.WRITE_SMS"
+        android:permissionGroup="android.permission-group.MESSAGES"
+        android:protectionLevel="dangerous"
+        android:label="@string/permlab_writeSms"
+        android:description="@string/permdesc_writeSms"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
 
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+
 
     <application
         android:allowBackup="true"
@@ -19,17 +58,26 @@
             android:name=".MainActivity"
             android:label="@string/app_name" >
 
-        </activity>
-        <activity
-            android:name=".Commons.Splash"
-            android:label="@string/app_name" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".commons.views.Splash"
+            android:label="@string/app_name" >
+
+        </activity>
+
+        <receiver android:name=".sensors.devicesensors.BootCompleteSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>
