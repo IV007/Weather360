@@ -15,14 +15,15 @@
         android:id="@+id/cameraButton"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        style="@style/BuzzDialogPositiveButton"
+        style="@style/ButtonStyle"
         />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/cameraImageView"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        />
 
 
 </RelativeLayout>
