@@ -56,14 +56,36 @@ public class Screw {
         return result;
     }
 
+    public static String loadAndDecipherValue(Context context, SharedPreferences preferences, String key){
+        return loadAndDecipherValue(context, preferences, key, null);
+    }
+
     /**
-     * Method to load ciphered value
+     * Method to load and decipher a string value
      *
      */
-    public static boolean loadCipheredValue(Context context, SharedPreferences preferences, String key, String value){
-        boolean result = false;
+    public static String loadAndDecipherValue(Context context, SharedPreferences preferences, String key, String defaultvalue){
+        String value = null;
 
-        return result;
+        String cipheredText = preferences.getString(key, null);
+        if (cipheredText != null){
+            byte[] cipheredValue = Screw.fromHexString(cipheredText);
+            if (cipheredValue != null){
+                try{
+                    value = Crypto.decryptValue(context, cipheredValue);
+
+                }catch (Throwable e){
+                    value = defaultvalue;
+                    Log.e(TAG, "...Unable to Decrypt cipher ==>" + e.getMessage());
+                }
+            }else{
+                value = defaultvalue;
+            }
+        }else{
+            value = defaultvalue;
+        }
+
+        return value;
     }
 
 
