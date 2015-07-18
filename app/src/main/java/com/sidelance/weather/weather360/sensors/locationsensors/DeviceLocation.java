@@ -3,6 +3,7 @@ package com.sidelance.weather.weather360.sensors.locationsensors;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -11,6 +12,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,22 +37,24 @@ public class DeviceLocation extends Activity{
 
     private LocationManager locationManager;
 
-    Geocoder geocoder;
-//    LocationListener listener;
-    String city, country, provider;
-    List<Address> addressList;
+    private Geocoder geocoder;
+    private LocationListener listener;
+    public String city, country, provider;
+    private List<Address> addressList;
     double x, y;
     boolean clicked;
 
     Button locationButton;
     TextView userLocation;
 
+    MyLocationListener listen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_user_location);
+
         clicked = false;
 
         locationButton =  ( Button )findViewById(R.id.locationButton);
@@ -70,8 +74,27 @@ public class DeviceLocation extends Activity{
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (city!=null && country != null) {
+            userLocation.setText(getCity() + getCountry());
+        }
+    }
 
     private void locationButtonClicked(){
+
+
+        boolean enabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if(!enabled){
+            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            startActivity(intent);
+        }
 
         LocationListener listener = new MyLocationListener();
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, listener);
@@ -93,7 +116,7 @@ public class DeviceLocation extends Activity{
                 addressList = geocoder.getFromLocation(x, y, 1);
                 StringBuilder stringBuilder = new StringBuilder();
                 if(geocoder.isPresent()){
-                    
+
                     Log.e(TAG, "==> Geocoder Detected <==");
 
                     Address returnAddress = addressList.get(0);
