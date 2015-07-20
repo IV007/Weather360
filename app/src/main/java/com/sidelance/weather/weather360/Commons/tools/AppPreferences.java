@@ -1,7 +1,11 @@
 package com.sidelance.weather.weather360.commons.tools;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
+import android.util.Log;
+
+import com.sidelance.weather.weather360.AppConstants;
 
 import java.util.Map;
 import java.util.Set;
@@ -10,6 +14,39 @@ import java.util.Set;
  * Class that handles all saved data
  */
 public class AppPreferences implements SharedPreferences {
+
+    private static final String TAG = AppPreferences.class.getSimpleName();
+
+    private static final String mLastUserLocation = "saveUserLocation";
+
+    private String location;
+
+    public AppPreferences(String location) {
+        this.location = location;
+    }
+
+
+    public void saveToPersistence(Context context){
+
+        SharedPreferences preferences = context.getSharedPreferences(AppConstants.STORE_NAME, Context.MODE_PRIVATE);
+        boolean result = Screw.saveCipheredValue(context, preferences, mLastUserLocation, getLocation());
+        if (!result){
+            Log.e(TAG, "Failed to save user Location");
+        }
+
+    }
+
+    public AppPreferences loadFromPersistence(Context context){
+
+        AppPreferences result;
+
+        SharedPreferences preferences = context.getSharedPreferences(AppConstants.STORE_NAME, Context.MODE_PRIVATE);
+        String location = Screw.loadAndDecipherValue(context, preferences,mLastUserLocation);
+
+        result = new AppPreferences(location);
+
+        return result;
+    }
 
     /**
      * Retrieve all values from the preferences.
@@ -179,5 +216,9 @@ public class AppPreferences implements SharedPreferences {
     @Override
     public void unregisterOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
 
+    }
+
+    public String getLocation() {
+        return location;
     }
 }
