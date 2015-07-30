@@ -11,7 +11,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sidelance.weather.weather360.MainActivity;
+import com.sidelance.weather.weather360.CameraActivity;
 import com.sidelance.weather.weather360.R;
 
 import butterknife.InjectView;
@@ -61,7 +61,7 @@ public class Splash extends ActionBarActivity {
     public void startUpFinish(){
 
         dialogIcon.setAnimation(null);
-        Intent intent = new Intent(Splash.this, MainActivity.class);
+        Intent intent = new Intent(Splash.this, CameraActivity.class);
         startActivity(intent);
     }
 
