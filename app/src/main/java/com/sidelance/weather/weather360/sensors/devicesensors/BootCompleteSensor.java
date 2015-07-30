@@ -7,9 +7,8 @@ import android.os.Handler;
 import android.widget.Toast;
 
 /**
- * Service Helper ensures tracks varirous device states.
+ * Service Helper tracks various device states.
  */
-
 
 public class BootCompleteSensor extends BroadcastReceiver {
 
@@ -25,11 +24,6 @@ public class BootCompleteSensor extends BroadcastReceiver {
         Toast messageOne = Toast.makeText(context, "INITIALIZING 95%... ", Toast.LENGTH_SHORT);
         messageOne.show();
 
-        Toast messageTwo = Toast.makeText(context, "BBVA COMPASS DEBUG-DROID DETECTED", Toast.LENGTH_SHORT);
-        messageOne.cancel();
-        messageTwo.show();
-
     }
-
 
 }
