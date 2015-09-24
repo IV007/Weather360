@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="BuzzDialogPositiveButton">
+    <style name="ButtonStyle">
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/kmw</item>
         <item name="android:textSize">16sp</item>
